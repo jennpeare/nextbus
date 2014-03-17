@@ -7,10 +7,10 @@ url = "http://runextbus.heroku.com/config"
 response = urllib2.urlopen(url).read()
 data = json.loads(response)
 
-with open("businfo.json", "w+") as f:
+with open("data/businfo.json", "w+") as f:
     json.dump(data, f)
 
-with open("businfo.json", "r") as g:
+with open("data/businfo.json", "r") as g:
     data = json.load(g)
 #pprint(data)
 

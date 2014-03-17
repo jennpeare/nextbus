@@ -6,10 +6,10 @@ url = "http://runextbus.herokuapp.com/config"
 
 data = requests.get(url).json()
 
-with open("businfo.json", "w+") as f:
+with open("data/businfo.json", "w+") as f:
     json.dump(data, f)
 
-with open("businfo.json", "r") as g:
+with open("data/businfo.json", "r") as g:
     data = json.load(g)
 
 #pprint(data)
