@@ -12,12 +12,15 @@ with open("data/businfo.json", "w+") as f:
 with open("data/businfo.json", "r") as g:
     data = json.load(g)
 
-#pprint(data)
+pprint(data)
 
 stops_buses = {}
 
-for stops in data.get("stops").values():
-    stops_buses[stops.get("title")] = stops.get("routes")
+#for stops in data.get("stops").values():
+    #stops_buses[stops.get("title")] = stops.get("routes")
+
+for stopinfo in data["stops"].itervalues():
+    stops_buses[stopinfo["title"]] = stopinfo["routes"]
 
 keylist = stops_buses.keys()
 keylist.sort()
